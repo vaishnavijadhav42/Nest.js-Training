@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Request,Response,NextFunction } from 'express';
+import * as express from 'express';
 
 function globalMiddlewareOne(req:Request,res:Response,next:NextFunction)
 {
@@ -15,6 +16,7 @@ function globalMiddlewareTwo(req:Request,res:Response,next:NextFunction)
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(express.json());
   app.use(globalMiddlewareOne);
   app.use(globalMiddlewareTwo);
   await app.listen(3000);
