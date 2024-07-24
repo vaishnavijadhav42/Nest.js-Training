@@ -6,9 +6,9 @@ import { DemoDto } from './dto/demo.dto';
 @Controller('app')
 export class AppController {
   @Post()
- // @UseInterceptors(UserInterceptor)
+  @UseInterceptors(UserInterceptor)
   createApp(@Body() demoDto: DemoDto): any {
-    //demoDto.originaldata="JJ";
+    
     return demoDto;
   }
 }

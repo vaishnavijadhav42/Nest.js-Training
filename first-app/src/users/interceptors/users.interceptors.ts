@@ -6,6 +6,7 @@ import { DemoDto } from '../dto/demo.dto'; // Adjust path as per your project st
 
 @Injectable()
 export class UserInterceptor implements NestInterceptor {
+  
   intercept(context: ExecutionContext, next: CallHandler<any>): Observable<any> {
     const request = context.switchToHttp().getRequest<DemoDto>(); // Use DemoDto here
     
@@ -21,7 +22,7 @@ export class UserInterceptor implements NestInterceptor {
        return {
         success: true,
         message: 'Request data modified successfully',
-        requestData: { name: request.name, age: request.age, email: request.email }, // Include specific fields from request
+        requestData: { name: request.name, age: request.age, email: request.email },
         responseData: data 
       };
 

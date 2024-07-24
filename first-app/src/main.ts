@@ -16,7 +16,7 @@ function globalMiddlewareTwo(req:Request,res:Response,next:NextFunction)
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use(express.json());
+   app.use(express.json());
   app.use(globalMiddlewareOne);
   app.use(globalMiddlewareTwo);
   await app.listen(3000);

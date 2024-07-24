@@ -8,17 +8,20 @@ export class UserService{
     {
         username:"user1",
         password:"admin",
-        email:"user1@gmail.com"
+        email:"user1@gmail.com",
+        role:"admin"
     },
     {
         username:"user2",
         password:"admin",
-        email:"user2@gmail.com"
+        email:"user2@gmail.com",
+         role:"admin"
     },
     {
         username:"user3",
         password:"admin",
-        email:"user3@gmail.com"
+        email:"user3@gmail.com",
+         role:"user"
      }]
 
      
